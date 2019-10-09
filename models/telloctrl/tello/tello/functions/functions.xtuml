@@ -1,0 +1,156 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	"00000000-0000-0000-0000-000000000000",
+	"1263e5da-83f5-4983-abf9-903dcf162237",
+	'functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("8e4f03b4-8166-4fe7-961a-75601f1d4466",
+	112,
+	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'telloctrl::tello::tello::functions');
+INSERT INTO DIM_DIA
+	VALUES ("8e4f03b4-8166-4fe7-961a-75601f1d4466",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("2652c7d5-807a-46f5-9da2-2152000f5c77",
+	"00000000-0000-0000-0000-000000000000",
+	'recv',
+	'',
+	'if (param.str == "ok")
+	generate Controller_A2:''ok'' to Controller class;
+elif (param.str == "error")
+	generate Controller_A5:''error'' to Controller class;
+end if;
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO S_SPARM
+	VALUES ("898ec82e-5f2e-4119-873f-06399e5dc746",
+	"2652c7d5-807a-46f5-9da2-2152000f5c77",
+	'str',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("2652c7d5-807a-46f5-9da2-2152000f5c77",
+	1,
+	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("4bee5630-1b9a-43f6-a620-fa221ed578ed",
+	"00000000-0000-0000-0000-000000000000",
+	'timer',
+	'',
+	'create event instance timeout of Controller_A6:''timeout'' to Controller class;
+timer = TIM::timer_start( event_inst:timeout, microseconds:param.microseconds );
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO S_SPARM
+	VALUES ("92d65260-36e2-48b9-aee1-7398e68ff8d4",
+	"4bee5630-1b9a-43f6-a620-fa221ed578ed",
+	'microseconds',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("4bee5630-1b9a-43f6-a620-fa221ed578ed",
+	1,
+	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("429604b4-ef44-4aa8-b5b4-01a6a8d8a1e8",
+	"00000000-0000-0000-0000-000000000000",
+	'setup',
+	'',
+	'generate Controller_A1:''init'' to Controller class;
+',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("429604b4-ef44-4aa8-b5b4-01a6a8d8a1e8",
+	1,
+	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("e1c2a934-e9e8-4c8c-8594-34f465382d22",
+	"00000000-0000-0000-0000-000000000000",
+	'marker_detected',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO S_SPARM
+	VALUES ("ada33696-59c5-451e-aaab-199d74a23458",
+	"e1c2a934-e9e8-4c8c-8594-34f465382d22",
+	'id',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO PE_PE
+	VALUES ("e1c2a934-e9e8-4c8c-8594-34f465382d22",
+	1,
+	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"07c273a8-ec7b-4699-8ff0-4ad2786298cf",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("07c273a8-ec7b-4699-8ff0-4ad2786298cf",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'tello',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../tello.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("1263e5da-83f5-4983-abf9-903dcf162237",
+	'telloctrl',
+	1,
+	'../../../telloctrl.xtuml');

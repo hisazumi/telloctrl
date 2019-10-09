@@ -1,0 +1,32 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("206ba594-def4-4a18-b33e-4a9ece16913e",
+	'Controller',
+	1,
+	'Controller',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_ID
+	VALUES (0,
+	"206ba594-def4-4a18-b33e-4a9ece16913e");
+INSERT INTO O_ID
+	VALUES (1,
+	"206ba594-def4-4a18-b33e-4a9ece16913e");
+INSERT INTO O_ID
+	VALUES (2,
+	"206ba594-def4-4a18-b33e-4a9ece16913e");
+INSERT INTO PE_PE
+	VALUES ("206ba594-def4-4a18-b33e-4a9ece16913e",
+	1,
+	"be05c1ca-f793-4f4f-98c7-350a29390863",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("be05c1ca-f793-4f4f-98c7-350a29390863",
+	"00000000-0000-0000-0000-000000000000",
+	"1263e5da-83f5-4983-abf9-903dcf162237",
+	'tello',
+	'',
+	0,
+	'../tello.xtuml');
