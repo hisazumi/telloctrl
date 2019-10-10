@@ -52,11 +52,15 @@ void cmd_parse(const char *str, int size) {
 	int i, prevp = 0;
 	for (i=0 ; i<size ; i++) {
 		if (str[i] == ';') {
-			char id[2048];
+			char marker[100], buf[100];
 			int cursize = i-prevp;
-			memcpy(id, str+prevp, cursize);
-			id[cursize] = '\0';
-			tello_marker_detected(atoi(id));
+			int id, tx, ty, tz;
+			memcpy(marker, str+prevp, cursize);
+			marker[cursize] = '\0';
+
+			sscanf(marker, "%d,%d,%d,%d", &id, &tx, &ty, &tz);
+
+			tello_marker_detected(id, tx, ty, tz);
 			prevp = i+1;
 		}
 	}

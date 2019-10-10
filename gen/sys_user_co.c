@@ -16,7 +16,7 @@
  * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
-#include "tellobp_sys_types.h"
+#include "telloctrl_sys_types.h"
 #include "sys_user_co.h"
 #include "TIM_bridge.h"
 #include "udp.h"

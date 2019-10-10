@@ -68,7 +68,7 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'timer',
 	'',
-	'create event instance timeout of Controller_A6:''timeout'' to Controller class;
+	'create event instance timeout of Controller_A3:''timeout'' to Controller class;
 timer = TIM::timer_start( event_inst:timeout, microseconds:param.microseconds );
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
@@ -125,6 +125,33 @@ INSERT INTO S_SPARM
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("770e00e8-0e02-4139-bc56-4048bb5692af",
+	"e1c2a934-e9e8-4c8c-8594-34f465382d22",
+	'x',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"ada33696-59c5-451e-aaab-199d74a23458",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("d9371b1d-3052-4f79-9c98-e84370a1817a",
+	"e1c2a934-e9e8-4c8c-8594-34f465382d22",
+	'y',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"770e00e8-0e02-4139-bc56-4048bb5692af",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("3063ea08-eae3-474b-bb47-4b313103ec6e",
+	"e1c2a934-e9e8-4c8c-8594-34f465382d22",
+	'z',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"d9371b1d-3052-4f79-9c98-e84370a1817a",
 	'');
 INSERT INTO PE_PE
 	VALUES ("e1c2a934-e9e8-4c8c-8594-34f465382d22",
