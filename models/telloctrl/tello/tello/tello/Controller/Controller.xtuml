@@ -1,23 +1,41 @@
 -- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO O_OBJ
-	VALUES ("206ba594-def4-4a18-b33e-4a9ece16913e",
+	VALUES ("6b3a6291-03ae-4341-b6b0-4870ec1a4e9c",
 	'Controller',
 	1,
 	'Controller',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("a6caa144-75aa-4db0-9eda-fca43577e380",
+	"6b3a6291-03ae-4341-b6b0-4870ec1a4e9c");
+INSERT INTO O_BATTR
+	VALUES ("a6caa144-75aa-4db0-9eda-fca43577e380",
+	"6b3a6291-03ae-4341-b6b0-4870ec1a4e9c");
+INSERT INTO O_ATTR
+	VALUES ("a6caa144-75aa-4db0-9eda-fca43577e380",
+	"6b3a6291-03ae-4341-b6b0-4870ec1a4e9c",
+	"00000000-0000-0000-0000-000000000000",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
-	"206ba594-def4-4a18-b33e-4a9ece16913e");
+	"6b3a6291-03ae-4341-b6b0-4870ec1a4e9c");
 INSERT INTO O_ID
 	VALUES (1,
-	"206ba594-def4-4a18-b33e-4a9ece16913e");
+	"6b3a6291-03ae-4341-b6b0-4870ec1a4e9c");
 INSERT INTO O_ID
 	VALUES (2,
-	"206ba594-def4-4a18-b33e-4a9ece16913e");
+	"6b3a6291-03ae-4341-b6b0-4870ec1a4e9c");
 INSERT INTO PE_PE
-	VALUES ("206ba594-def4-4a18-b33e-4a9ece16913e",
+	VALUES ("6b3a6291-03ae-4341-b6b0-4870ec1a4e9c",
 	1,
 	"be05c1ca-f793-4f4f-98c7-350a29390863",
 	"00000000-0000-0000-0000-000000000000",

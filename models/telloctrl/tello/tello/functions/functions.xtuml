@@ -38,10 +38,9 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'recv',
 	'',
-	'if (param.str == "ok")
-	generate Controller_A2:''ok'' to Controller class;
-elif (param.str == "error")
-	generate Controller_A5:''error'' to Controller class;
+	'select any ctrl from instances of Controller;
+if (param.str == "ok")
+	generate Controller2:''ok'' to ctrl;
 end if;
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
@@ -68,7 +67,8 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'timer',
 	'',
-	'create event instance timeout of Controller_A3:''timeout'' to Controller class;
+	'select any ctrl from instances of Controller;
+create event instance timeout of Controller3:''timeout'' to ctrl;
 timer = TIM::timer_start( event_inst:timeout, microseconds:param.microseconds );
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
@@ -95,7 +95,9 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'setup',
 	'',
-	'generate Controller_A1:''init'' to Controller class;
+	'create object instance ctrl of Controller;
+generate Controller1:''init'' to ctrl;
+
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
@@ -112,8 +114,8 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'marker_detected',
 	'',
-	'LOG::LogInteger( message:param.id );
-LOG::LogInteger( message:param.z );
+	'select any ctrl from instances of Controller;
+generate Controller4:''marker'' (id:param.id, x:param.x, y:param.y, z:param.z) to ctrl;
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
@@ -157,6 +159,38 @@ INSERT INTO S_SPARM
 	'');
 INSERT INTO PE_PE
 	VALUES ("e1c2a934-e9e8-4c8c-8594-34f465382d22",
+	1,
+	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("1bf296e3-1cac-43fb-9718-69fa90041471",
+	"00000000-0000-0000-0000-000000000000",
+	'command',
+	'',
+	'Tello::send( str:"command" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("1bf296e3-1cac-43fb-9718-69fa90041471",
+	1,
+	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("047bbf91-f6f0-4b09-b4d3-98d64e69d244",
+	"00000000-0000-0000-0000-000000000000",
+	'streamon',
+	'',
+	'Tello::send( str:"streamon" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("047bbf91-f6f0-4b09-b4d3-98d64e69d244",
 	1,
 	"f3fd148e-cb33-48fd-a3ef-0cad337b52ed",
 	"00000000-0000-0000-0000-000000000000",
